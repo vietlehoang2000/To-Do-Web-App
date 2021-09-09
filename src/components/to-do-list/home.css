@@ -1,0 +1,229 @@
+.home,.newTask{
+    max-width: 850px;
+    margin: auto;
+    padding: 14px;
+    min-height: 98vh;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.newTask{
+    justify-content: unset;
+}
+h1{
+    text-align: center;
+}
+
+#search{
+    width: calc(93% - 4px);
+    margin-left: calc(4% - 1px);
+    padding: 7px;
+    margin-bottom: 10px;
+}
+
+.items{
+    max-width: 768px;
+    margin: auto;
+    padding: 5px;
+}
+
+.item-detail{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(75, 75, 75);
+    padding: 9px;
+}
+
+.checkbox{
+    margin-right: 10px;
+}
+
+.detail--leftBlock{   
+    display: flex;
+    align-items: center;
+}
+
+.detail--rightBlock{
+    display: flex;
+    align-items: center;
+}
+
+.item-expand{
+    border: 1px solid rgb(75, 75, 75);
+    padding: 9px;
+    border-top: none;
+}
+form{
+    text-align: center;
+    padding: 5px;
+}
+
+form h4{
+    width: 90%;
+    text-align: left;
+    margin: auto;
+    font-size: 0.8rem;
+}
+
+#name{
+    width: 90%;
+    padding: 7px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(162, 162, 162);
+    border-radius: 3px;
+}
+#description{
+    width: 90%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 7px;
+}
+
+.expand--splitBlock{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.expand--splitBlock h4{
+    width: 100%;
+}
+
+.dueDateBlock,.priorityBlock{
+    width: 45%;
+}
+
+
+#dueDate{
+    width: 100%;
+    padding: 7px;
+    height: 40px;
+}
+
+#priority{
+    width: 100%;
+    padding: 7px;
+    height: 40px;
+}
+
+.bulk-remove{
+    background-color: rgb(224,224,224);
+}
+
+.false{
+    display: none !important;
+}
+
+.true{
+    display: flex !important;
+}
+
+.newTask h1{
+    margin-bottom: 20px;
+}
+
+.newTask  form .btn--update{
+    margin-left: unset;
+}
+
+/*style drop down block*/
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(startYposition);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(endYposition);
+    }
+  }
+.show{
+    animation-duration: 1.5s;
+    animation-name: fadeIn;
+}
+
+.hide {
+    opacity: 0;
+    height: 0 !important;
+    position: relative;
+    z-index: -1;
+ }
+
+ .bulk-remove{
+     margin: 0px -14px -14px -14px;
+     padding: 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     border-top: 1px solid black;
+ }
+/* style button */
+.btn{
+    border-radius: 4px;
+    background: none;
+    border:none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+.btn:hover{
+    color: black;
+    opacity: 0.8;
+}
+
+.btn__sm{
+    width: 70px;
+    height: 30px;
+}
+
+.btn__md{
+    width: 100px;
+    height: 50px;
+}
+
+.btn__lg{
+    width: 90%;
+    height: 30px;
+    margin-left: 5%;
+}
+
+.btn--detail{
+    background-color: rgb(0,188,212);
+}
+
+.btn--remove{
+    background-color: rgb(217,83,79);
+}
+
+.btn--done{
+    background-color: rgb(32,150,243);
+}
+
+.btn--update{
+    background-color: rgb(76,175,81);
+}
+
+.btn--new{
+    background-color: rgb(76,175,81);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 3%;
+}
+/* font */
+
+.item-expand h4{
+    font-weight: bold;
+}
+
+h4{
+    font-weight: normal;
+}
+
+h1{
+    font-size: 1.3rem;
+}
