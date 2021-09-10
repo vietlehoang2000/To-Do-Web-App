@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function NewTask({prioritizeTasks,tasks,setAppPage,setTasks}){
 
@@ -6,8 +6,16 @@ export default function NewTask({prioritizeTasks,tasks,setAppPage,setTasks}){
     const [newItemDesc, setNewItemDesc] = useState('');
     const [newItemDueDate, setNewItemDueDate] = useState('');
     const [newItemPriority,setNewItemPriority] =useState(2);
+    const [showSuccessModal,setShowSuccessModal] = useState('');
+    const [showFailModal,setShowFailModal ] = useState('');
     const currentDate = new Date();
    
+    useEffect(()=>{
+        setTimeout(()=>{
+            setShowSuccessModal('');
+            setShowFailModal('');
+        },4500)
+    },[showSuccessModal,showFailModal])
 
     function addNewItem(e){
         e.preventDefault();
@@ -28,6 +36,10 @@ export default function NewTask({prioritizeTasks,tasks,setAppPage,setTasks}){
         refTasks.push(newTask)
         console.log(refTasks)
         setTasks(refTasks)
+        setShowSuccessModal(true)
+        }
+        else{
+            setShowFailModal(true)
         }
     }
 
@@ -69,7 +81,9 @@ export default function NewTask({prioritizeTasks,tasks,setAppPage,setTasks}){
           <button className="btn btn__lg btn--update" type="submit" style={{marginTop:"10px"}} onClick={(e)=>addNewItem(e)}>Add</button>
           </form>
           
-          <button className="btn btn__lg btn--update" onClick={()=>{returnHomePage()}} style={{marginTop:"10px",backgroundColor:"rgb(32,150,243)"}}>Done</button>
+          <button className={`btn btn__lg btn--update`} onClick={()=>{returnHomePage()}} style={{marginTop:"10px",backgroundColor:"rgb(32,150,243)"}}>Return Home Page</button>
         </div>
+        <div className={`modal modal__md modal--success show-${showSuccessModal}`}>Successful add new task</div>
+        <div className={`modal modal__md modal--fail show-${showFailModal}`}>Fail to add new Task</div>
     </div>)
 }
